@@ -1,0 +1,152 @@
+/******************* CSS Document ****************/
+*, *::after, *::before {
+    box-sizing:border-box;  
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  a:focus-visible, a:active, button:focus, button:active {
+    outline-color: black;
+  }
+
+/******************* Typography ****************/
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.6em;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+    color: #E04242;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600; 
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 500; 
+    line-height: 26px;
+    color: #6B6B6B;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+a.red {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    background: #E04242;
+    color: white;
+    border-radius: 100px;
+    padding: 1.2em 3em;
+}
+
+/******************* Header ****************/
+
+header {
+    position: fixed;
+    padding: 2em 2em;
+    width: 100%;
+    background: white;
+}
+
+header div {
+    max-width: 1100px;
+    margin: auto;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style-type: none;
+    margin-right: 4em;
+}
+
+header ul li:last-of-type {
+    margin-right: 0em;
+}
+
+/******************* Main ****************/
+
+main {
+    padding: 2em;
+    max-width: 1100px;
+    margin: auto;
+}
+
+main section.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section.hero div {
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section.hero h1 {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+main section.hero h4 {
+    order: -1;
+    width: 100%;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+main section.hero a:last-of-type {
+    padding: 1.2em 3em;
+    color: #E04242;
+}
+
+main section.hero h4:before {
+    content: '';
+    display: inline-block;
+    width: 3em;
+    height: 2px;
+    border-radius: 100px;
+    background: #E04242;
+    margin: 0 1em 4px 0;
+}
+
+main section.hero p {
+    max-width: 38ch;
+    margin-bottom: 3em;
+    font-size: 1em;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+main section.hero img {
+    max-width: 20em;
+}
