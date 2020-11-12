@@ -93,37 +93,41 @@ header {
     background: white;
 }
 
-header > div:first-of-type {
+header .desktop {
     max-width: 1150px;
-    padding: 2em;
+    padding: 2em 1.5em;
     margin: auto;
     display: block;
     transition: .4s ease;
 }
 
-header nav.desktop {
+header .desktop nav {
     display: flex;
     justify-content: space-between;
 }
 
-header nav.desktop ul {
+header .desktop nav > a {
     display: flex;
 }
 
-header nav.desktop ul li {
+header .desktop nav ul {
+    display: flex;
+}
+
+header .desktop nav ul li {
     list-style-type: none;
     margin-right: 4em;
 }
 
-header nav.desktop ul li:last-of-type {
+header .desktop nav ul li:last-of-type {
     margin-right: 0em;
 }
 
-header nav.desktop ul li:last-of-type a {
+header .desktop nav ul li:last-of-type a {
     color: white;
 }
 
-header nav.desktop ul a {
+header .desktop nav ul a {
     text-decoration: none;
     color: black;
     position: relative;
@@ -132,6 +136,14 @@ header nav.desktop ul a {
 
 button.menu-trigger-open {
     display: none;
+    background: none;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+button.menu-trigger-open img {
+    width: 100%;
 }
 
 /* Mobile Overlay */
@@ -140,7 +152,6 @@ header .mobile {
     transform: translateX(200%);
     width: 100%;
     height: 100vh;
-    padding: 2em;
     background-color: white;
     position: fixed;
     top: 0;
@@ -160,6 +171,7 @@ header .mobile nav > a img {
     display: block;
     margin: auto;
     width: 10em;   
+    margin-bottom: 4em;
 }
 
 header .mobile ul {
@@ -169,7 +181,7 @@ header .mobile ul {
 }
 
 header .mobile ul li {
-    margin: 2em 0;
+    margin: 3em 0;
 }
 
 header .mobile ul li a {
@@ -188,48 +200,52 @@ header .mobile ul li:last-of-type a {
 
 header .mobile .menu-trigger-close {
     position: absolute;
-    top: 3em;
-    right: 3em;
+    top: 2em;
+    right: 2em;
+    background: none;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+header .mobile .menu-trigger-close img {
+    width: 100%;
 }
 
 
 /******************* Main ****************/
 
 /* Hero Section */
-#hero {
+main #hero {
     max-width: 1150px;
+    padding: 1.5em;
     margin: auto;
     height: 95vh;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
-#hero > div {
-    flex-basis: 40%;
+main #hero > div:first-of-type {
+    width: 40%;
     display: flex;
     flex-wrap: wrap;
 }
 
-#hero h1 {
+main #hero h1 {
     width: 100%;
     margin-bottom: 0.5em;
 }
 
-#hero h4 {
+main #hero h4 {
     order: -1;
     width: 100%;
     margin-bottom: 2em;
     position: relative;
 }
 
-#hero a:last-of-type {
-    margin-left: 3em;
-    padding: 1.2em 0;
-    color: #4200FF;
-}
-
-#hero p {
+main #hero p {
     max-width: 38ch;
     margin-bottom: 3em;
     font-size: 1em;
@@ -237,16 +253,35 @@ header .mobile .menu-trigger-close {
     font-weight: 400;
 }
 
-#hero img {
-    max-width: 22em;
+main #hero > div:first-of-type > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #hero a:last-of-type {
+    margin-left: 3em;
+    padding: 1.2em 0;
+    color: #4200FF;
+}
+
+main #hero > div:last-of-type {
+    width: 40%;
+}
+
+main #hero img {
+   max-width: 22em;
+   width: 100%;
+   display: block;
+   margin: auto;
 }
 
 /* USP Section */
-#usp {
+main #usp {
     background: #F5F5F5;
 }
 
-#usp > div {
+main #usp > div {
     max-width: 1150px;
     margin: auto;
     padding: 7.5em 2em;
@@ -254,30 +289,30 @@ header .mobile .menu-trigger-close {
     flex-wrap: wrap;
 }
 
-#usp h2 {
+main #usp h2 {
     max-width: 30ch;
     margin-bottom: 3em;
 }
 
-#usp h4 {
+main #usp h4 {
     width: 100%;
     order: -1;
     margin-bottom: 2em;
     position: relative;
 }
 
-#usp section {
+main #usp section {
     display: grid;
     grid-column-gap: 5em;
     grid-template-columns: repeat(3, 1fr);
 }
 
-#usp section article h3 {
+main #usp section article h3 {
     margin: 1em 0 .5em;
 }
 
 /* Work Section */
-#work {
+main #work {
     max-width: 1150px;
     margin: auto;
     padding: 7.5em 2em;
@@ -286,54 +321,54 @@ header .mobile .menu-trigger-close {
     position: relative;
 }
 
-#work h2 {
+main #work h2 {
     width: 100%;
     margin-bottom: 3em;
 }
 
-#work h4 {
+main #work h4 {
     width: 100%;
     order: -1;
     margin-bottom: 2em;
     position: relative;
 }
 
-#work .swiper-container {
+main #work .swiper-container {
     width: 100%;
 }
 
-#work .swiper-slide {
+main #work .swiper-slide {
     color: white;
     border-radius: 12px;
     max-width: 17em;
     height: 18em;
 }
 
-#work .swiper-slide:nth-of-type(1) {
+main #work .swiper-slide:nth-of-type(1) {
     background: #0950BA;
 }
 
-#work .swiper-slide:nth-of-type(2) {
+main #work .swiper-slide:nth-of-type(2) {
     background: #2EA333;
 }
 
-#work .swiper-slide:nth-of-type(3) {
+main #work .swiper-slide:nth-of-type(3) {
     background: #000000;
 }
 
-#work .swiper-slide:nth-of-type(4) {
+main #work .swiper-slide:nth-of-type(4) {
     background: #C61B4E;
 }
 
-#work .swiper-slide:nth-of-type(5) {
+main #work .swiper-slide:nth-of-type(5) {
     background: #0950BA;
 }
 
-#work .swiper-slide:nth-of-type(6) {
+main #work .swiper-slide:nth-of-type(6) {
     background: #2EA333;
 }
 
-#work .swiper-slide a {
+main #work .swiper-slide a {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -341,7 +376,7 @@ header .mobile .menu-trigger-close {
     left: 0;
 }
 
-#work .swiper-slide img {
+main #work .swiper-slide img {
     margin-bottom: 2em;
     position: absolute;
     top: 50%;
@@ -349,32 +384,32 @@ header .mobile .menu-trigger-close {
     transform: translate(-50%,-100%); 
 }
 
-#work .swiper-slide div {
+main #work .swiper-slide div {
     position: absolute;
     bottom: 1em;
     left: 1.5em;
 }
 
-#work .swiper-slide h5 {
+main #work .swiper-slide h5 {
     color: white;
     font-size: 1.2em;
 }
 
-#work .swiper-slide p {
+main #work .swiper-slide p {
     color: white;
     font-size: 0.9em;
     font-weight: 400;
     width: 100%;
 }
 
-#work .slider-arrows {
+main #work .slider-arrows {
     display: flex;
     margin-top: 2em;
     width: 100%;
     justify-content: flex-end;
 }
 
-#work .slider-arrows button {
+main #work .slider-arrows button {
     background: none;
     cursor: pointer;
 }
@@ -383,15 +418,15 @@ header .mobile .menu-trigger-close {
     opacity: 0.2;
 }
 
-#work .slider-arrows button:first-of-type {
+main #work .slider-arrows button:first-of-type {
     margin-right: 2em;
 }
 
-#work .swiper-prev {
+main #work .swiper-prev {
     position: relative;
 }
 
-#work .swiper-next {
+main #work .swiper-next {
     position: relative; 
 }
 
@@ -461,15 +496,36 @@ footer .logo img {
 /******************* Media Querries ****************/
 
 @media screen and (max-width: 800px) {
+
     button.menu-trigger-open {
         display: block;
     }
-    header nav.desktop ul {
+    header .desktop nav ul {
         display: none;
     }
-
-    header > div:first-of-type {
-        padding: 1.4em 2em;
+    header .desktop {
+        padding: 1.5em;
     }
 
+
+    main #hero {
+        height: auto;
+        padding: 7.5em 1.5em;
+        justify-content: center;
+    }
+    main #hero > div:first-of-type {
+        width: 100%;
+    }
+    main #hero > div:last-of-type {
+        width: 100%;
+    }
+    main #hero img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+    main #hero > div:last-of-type {
+        width: 40%;
+    }
 }
