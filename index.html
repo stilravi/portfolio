@@ -5,33 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi, ik ben Ravi</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
 </head>
 <body>
-    <header>
+    <header class="header">
         <div>
-            <img src="img/logo.svg" alt="logo">
-            <nav>
-                <ul>
-                    <li><a>Wie ik ben</a></li>
-                    <li><a>Wat ik doe</a></li>
-                    <li><a>Wat ik maak</a></li>
-                    <li><a class="red">Contact</a></li>
+            <nav class="desktop">
+                <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+                <ul class="menu-items-desktop">
+                    <li><a href="#hero">Wie ik ben</a></li>
+                    <li><a href="#usp">Wat ik doe</a></li>
+                    <li><a href="#work">Wat ik maak</a></li>
+                    <li><a href="#contact" class="fill">Contact</a></li>
                 </ul>
+                <button class="menu-trigger-open">Menu</button>
+            </nav>
+        </div>
+        <div class="mobile">
+            <nav>
+                <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+                <ul>
+                    <li class="menu-item"><a href="#hero">Wie ik ben</a></li>
+                    <li class="menu-item"><a href="#usp">Wat ik doe</a></li>
+                    <li class="menu-item"><a href="#work">Wat ik maak</a></li>
+                    <li class="menu-item"><a href="#contact" class="fill">Contact</a></li>
+                </ul>
+                <button class="menu-trigger-close">Menu</button>
             </nav>
         </div>
     </header>
     <main>
-        <section class="hero">
+        <section id="hero">
             <div>
                 <h1>Hi, ik ben Ravi</h1>
                 <h4>Wie ik ben</h4>
                 <p>Ik ben een Digital Designer die op dit moment Communication Multimedia Design studeert op de Hogeschool van Amsterdam.</p>
-                <a class="red">Bekijk mijn werk</a>
+                <a class="fill">Bekijk mijn werk</a>
                 <a>Neem contact op</a>
             </div>
             <img src="img/myself.png">
         </section>
+        <section class="usp" id="usp">
+            <div>
+                <h2>Ik bedenk, ontwerp en realiseer digitale producten. </h2>
+                <h4>Wat ik doe</h4>
+                <section>
+                    <article>
+                        <img src="img/front-end.svg">
+                        <h3>Interaction Design</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit feugiat convallis nisi hendrerit odio est varius. 
+                            Aenean facilisis mattis aliquet viverra.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="img/front-end.svg">
+                        <h3>Visual Design</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit feugiat convallis nisi hendrerit odio est varius. 
+                            Aenean facilisis mattis aliquet viverra.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="img/front-end.svg">
+                        <h3>Front-end Development</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit feugiat convallis nisi hendrerit odio est varius. 
+                            Aenean facilisis mattis aliquet viverra.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </section>
+        <section id="work">
+            <h2>Een verzameling van mijn werk.</h2>
+            <h4>Wat ik maak</h4>
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="index.html">
+                            <img src="img/brewfind-logo.svg">
+                            <div>
+                                <h5>BrewFind</h5>
+                                <p>Concept & Prototype</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slider-arrows">
+                <button class="swiper-prev"><img src="img/arrow2.svg"></button>
+                <button class="swiper-next"><img src="img/arrow.svg"></button>
+            </div>
+        </section>
     </main>
+    <footer id="contact">
+        <div>
+            <section class="contact">
+                <h2>Neem contact met mij op</h2>
+                <h4>Contact</h4>
+                <a class="fill">Stuur een email</a>
+                <ul>
+                    <li><a><img src="img/linkedin.svg"></a></li>
+                    <li><a><img src="img/instagram.svg"></a></li>
+                    <li><a><img src="img/behance.svg"></a></li>
+                </ul>
+            </section>
+            <section class="logo">
+                <img src="img/logo.svg">
+            </section>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
