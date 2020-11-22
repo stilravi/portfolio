@@ -6,12 +6,13 @@
     border: 0;
   }
 
-  html {
+  /* html {
       scroll-behavior: smooth;
-  }
+  } */
   
   a {
     cursor: pointer;
+    text-decoration: none;
   }
   
   a:focus-visible, a:active, button:focus, button:active {
@@ -24,12 +25,15 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.6em;
     font-weight: 700;
+    text-shadow: 4px 4px 0px rgba(68, 0, 255, 0.1);
 }
 
 h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8em;
     font-weight: 700;
+    text-shadow: 4px 4px 0px rgba(68, 0, 255, 0.1);
+
 }
 
 h3 {
@@ -64,13 +68,33 @@ p {
     font-size: 0.8em;
     font-weight: 500; 
     line-height: 26px;
-    color: #6B6B6B;
+    color: #7c7c7c;
 }
+
+/******************* Buttons & Links ****************/
 
 a {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
     font-weight: 600;
+    z-index: 2;
+    position: relative;
+}
+
+a.underline::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    background: #4200FF;
+    width: 0;
+    height: 3px;
+    border-radius: 25px;
+    transition: .4s ease;
+}
+
+a.underline:hover::after {
+    width: 100%;
 }
 
 a.fill {
@@ -82,7 +106,106 @@ a.fill {
     border-radius: 100px;
     padding: 1.2em 3em;
     text-decoration: none;
+    position: relative;
+    overflow: visible;
+    transition: 0.4s;
 }
+
+a.fill:hover:after {
+    box-shadow: 10px 10px 0px rgba(68, 0, 255, 0.1);
+}
+
+a.fill:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4200FF;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 5px 5px 0px rgba(68, 0, 255, 0.1);
+    transition: .4s;
+}
+
+/******************* Shapes ****************/
+
+.shape {
+    position: absolute;
+    opacity: 0.3;
+    width: 25px;
+    height: 25px;
+}
+
+@keyframes shapeRotate1 {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes shapeRotate2 {
+    from {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+.triangle-hero {
+    bottom: 4em;
+    left: 4em;
+    animation: shapeRotate1 10s infinite linear;
+    -webkit-animation: shapeRotate1 10s infinite linear;
+}
+
+.square-hero {
+    top: 8em;
+    animation: shapeRotate2 10s infinite linear;
+    -webkit-animation: shapeRotate2 10s infinite linear;
+}
+
+.circle-usp {
+    right: 20%;
+    top: 4em;
+}
+
+.cross-usp {
+    left: 30%;
+    bottom: 3em;
+    animation: shapeRotate2 10s infinite linear;
+    -webkit-animation: shapeRotate2 10s infinite linear;
+}
+
+.triangle-work {
+    top: 4em;
+    right: 4em;
+    animation: shapeRotate1 10s infinite linear;
+    -webkit-animation: shapeRotate1 10s infinite linear;
+}
+
+.square-work {
+    left: 30%;
+    bottom: 5em;
+    animation: shapeRotate2 10s infinite linear;
+    -webkit-animation: shapeRotate2 10s infinite linear;
+}
+
+.cross-footer {
+    right: 30%;
+    bottom: 3em;
+    animation: shapeRotate2 10s infinite linear;
+    -webkit-animation: shapeRotate1 10s infinite linear;
+}
+
 
 /******************* Header ****************/
 
@@ -95,7 +218,7 @@ header {
 
 header .desktop {
     max-width: 1150px;
-    padding: 2em 1.5em;
+    padding: 2em 2em;
     margin: auto;
     display: block;
     transition: .4s ease;
@@ -108,6 +231,7 @@ header .desktop nav {
 
 header .desktop nav > a {
     display: flex;
+    align-items: center;
 }
 
 header .desktop nav ul {
@@ -137,17 +261,16 @@ header .desktop nav ul a {
 button.menu-trigger-open {
     display: none;
     background: none;
-    width: 2.5em;
-    height: 2.5em;
     cursor: pointer;
 }
 
-button.menu-trigger-open img {
-    width: 100%;
+button.menu-trigger-open svg {
+    width: 2.5em;
+    height: 2.5em;
+    padding-right: 2px;
 }
 
 /* Mobile Overlay */
-
 header .mobile {
     transform: translateX(200%);
     width: 100%;
@@ -161,16 +284,17 @@ header .mobile {
     align-items: center;
     flex-wrap: wrap;
     transition: .4s ease;
+    z-index: 9999;
 }
 
 header .mobile.active {
     transform: translateX(0);
 }
 
-header .mobile nav > a img {
+header .mobile nav > a svg {
     display: block;
     margin: auto;
-    width: 10em;   
+    max-width: 10em;   
     margin-bottom: 4em;
 }
 
@@ -203,13 +327,12 @@ header .mobile .menu-trigger-close {
     top: 2em;
     right: 2em;
     background: none;
-    width: 2.5em;
-    height: 2.5em;
     cursor: pointer;
 }
 
-header .mobile .menu-trigger-close img {
-    width: 100%;
+header .mobile .menu-trigger-close svg {
+    width: 2.5em;
+    height: 2.5em;
 }
 
 
@@ -218,13 +341,14 @@ header .mobile .menu-trigger-close img {
 /* Hero Section */
 main #hero {
     max-width: 1150px;
-    padding: 1.5em;
+    padding: 2.5em 1.5em 1.5em;
     margin: auto;
     height: 95vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    position: relative;
 }
 
 main #hero > div:first-of-type {
@@ -257,28 +381,49 @@ main #hero > div:first-of-type > div {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+main #hero a:first-of-type {
+    margin-bottom: 2em;
 }
 
 main #hero a:last-of-type {
-    margin-left: 3em;
-    padding: 1.2em 0;
     color: #4200FF;
+    margin-left: 2.5em;
+    margin-bottom: 2em;
 }
 
 main #hero > div:last-of-type {
-    width: 40%;
+    position: relative;
+    max-width: 22em;
 }
 
 main #hero img {
-   max-width: 22em;
+   max-width: 20em;
    width: 100%;
    display: block;
    margin: auto;
+   position: relative;
+   border-radius: 12px;
+}
+
+main #hero > div:last-of-type:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #4200FF;
+    right: -0.5em;
+    top: 0.5em;
+    border-radius: 12px;
 }
 
 /* USP Section */
 main #usp {
     background: #F5F5F5;
+    position: relative;
 }
 
 main #usp > div {
@@ -319,6 +464,7 @@ main #work {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    overflow: hidden;
 }
 
 main #work h2 {
@@ -329,27 +475,46 @@ main #work h2 {
 main #work h4 {
     width: 100%;
     order: -1;
-    margin-bottom: 2em;
     position: relative;
+    margin-bottom: 2em;
 }
 
 main #work .swiper-container {
     width: 100%;
+    overflow: visible;
 }
 
 main #work .swiper-slide {
     color: white;
     border-radius: 12px;
-    max-width: 17em;
     height: 18em;
+    margin-bottom: 2em;
+}
+
+main #work .swiper-slide:after {
+    content: '';
+    position: absolute;
+    border-radius: 12px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.068);
+    top: 0.5em;
+    left: 0.5em;
+    transition: 0.4s ease;
+}
+
+main #work .swiper-slide:hover:after {
+    top: 1em;
+    left: 1em;
 }
 
 main #work .swiper-slide:nth-of-type(1) {
-    background: #0950BA;
+    background: #2EA333;
 }
 
 main #work .swiper-slide:nth-of-type(2) {
-    background: #2EA333;
+    background: #0950BA;
 }
 
 main #work .swiper-slide:nth-of-type(3) {
@@ -382,6 +547,8 @@ main #work .swiper-slide img {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-100%); 
+    -webkit-transform: translate(-50%,-100%); 
+    max-width: 12em;
 }
 
 main #work .swiper-slide div {
@@ -430,7 +597,110 @@ main #work .swiper-next {
     position: relative; 
 }
 
+/******************* Main Work detail page ****************/
+
+main#work-detail div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 2em;
+    max-width: 1150px;
+    margin: auto;
+    padding: 5em 2em;
+    position: relative;
+}
+
+main#work-detail .info {
+    max-height: 30em;
+    position: sticky;
+    top: 6.5em;
+}
+
+main#work-detail .info a {
+    text-decoration: none;
+    color: #4200FF;
+}
+
+main#work-detail .info a img {
+    margin-bottom: -5px;
+    margin-right: 1em;
+}
+
+main#work-detail .info ul {
+    list-style-type: none;
+    margin-top: 3em;
+}
+
+main#work-detail .info ul li {
+    margin-bottom: 2.5em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: 500; 
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+main#work-detail .info ul li a {
+    font-size: 1em;
+    margin-left: 0.6em;
+}
+
+main#work-detail .info ul img {
+    opacity: 0.3;
+    margin-right: 1em;
+    margin-top: -3px;
+}
+
+main#work-detail h2 {
+    text-shadow: none;
+}
+
+main#work-detail figure {
+    margin-top: 2em;
+}
+
+main#work-detail figcaption {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7em;
+    font-weight: 500; 
+    color: #aaaaaa;
+    margin-top: 0.8em;
+}
+
+main#work-detail .content > section {
+    margin: 6em 0;
+}
+
+main#work-detail .content h4 {
+    color: #a5a5a5;
+    margin-bottom: 3em;
+}
+
+main#work-detail .content p {
+    max-width: 70ch;
+    margin-top: 2em;
+    color: #7c7c7c;
+    font-size: 0.85em;
+    font-weight: 400; 
+}
+
+main#work-detail .content a.fill {
+    margin-top: 3em;
+    display: inline-block;
+}
+
+main#work-detail .content h4:before {
+    display: none;
+}
+
+main#work-detail .content img {
+    width: 100%;
+}
+
+
+
 /******************* Footer ****************/
+
 footer {
     background: #000000;
 }
@@ -438,14 +708,34 @@ footer {
 footer > div {
     padding: 7.5em 2em;
     display: flex;
+    flex-wrap: wrap;
     max-width: 1150px;
     margin: auto;
     justify-content: space-between;
+    position: relative;
 }
 
 footer .contact {
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
+}
+
+footer .contact svg {
+    transition: 0.4s ease;
+}
+
+/* LinkedIn */
+footer .contact svg:hover {
+    fill: white !important;
+}
+
+footer .contact svg #logo .cls-1 {
+    transition: 0.4s ease;
+}
+
+footer .contact svg:hover #logo .cls-1 {
+    fill: black;
 }
 
 footer h2 {
@@ -469,8 +759,16 @@ footer h4:before {
 footer .contact ul {
     list-style-type: none;
     display: flex;
-    border-left: 1px solid rgba(255, 255, 255, 0.219);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
     margin-left: 1.5em;
+}
+
+footer .contact a.fill:after {
+    box-shadow: 5px 5px 0px rgba(255, 255, 255, 0.1);
+}
+
+footer .contact a.fill:hover:after {
+    box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.1);
 }
 
 footer .contact ul li {
@@ -489,7 +787,7 @@ footer .logo {
     justify-content: flex-end;
 }
 
-footer .logo img {
+footer .logo svg {
     opacity: 0.25;
 }
 
@@ -497,6 +795,7 @@ footer .logo img {
 
 @media screen and (max-width: 800px) {
 
+    /* Mobile menu */
     button.menu-trigger-open {
         display: block;
     }
@@ -507,25 +806,91 @@ footer .logo img {
         padding: 1.5em;
     }
 
-
+    /* Mobile main homepage */
     main #hero {
         height: auto;
-        padding: 7.5em 1.5em;
+        padding: 10em 1.5em 7.5em;
         justify-content: center;
     }
     main #hero > div:first-of-type {
         width: 100%;
-    }
-    main #hero > div:last-of-type {
-        width: 100%;
+        max-width: 24em;
     }
     main #hero img {
         display: none;
     }
+    main #usp section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3em;
+    }
+    main #usp > div {
+        padding: 7.5em 1.5em;
+    }
+    main #work {
+        padding: 7.5em 1.5em;
+    }
+
+    /* Mobile detail page */
+    main#work-detail div {
+        grid-template-columns: 1fr;
+        padding: 2em 2em;
+    }
+    main#work-detail .info {
+        position: static;
+        top: 0;
+        padding-bottom: 1em;
+    }
+    main#work-detail .info ul {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+    main#work-detail .info ul li {
+        height: 3em;
+        display: flex;
+        align-items: center;
+        margin-right: 4em;
+    }
+    main#work-detail .info ul svg {
+        margin-bottom: 0;
+    }
+
+    /* Mobile footer */
+    footer > div {
+        padding: 7.5em 1.5em;
+    }
+    footer .contact {
+        width: 100%;
+    }
+    footer .contact a.fill {
+        margin-bottom: 1em;
+    }
+    footer .logo {
+        display: none;
+    }
+
 }
 
-@media screen and (max-width: 1000px) and (min-width: 800px) {
-    main #hero > div:last-of-type {
-        width: 40%;
+@media screen and (max-width: 550px) {
+    
+    /* Mobile main homepage */
+    main #usp section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    main #usp section p {
+        max-width: 40ch;
+    } 
+
+    /* Mobile footer */
+    footer .contact ul {
+        flex-basis: 100%;
+        margin: 0;
+        border: none;
+    }
+    footer .contact ul li {
+        margin-left: 0;
+        margin: 2em 1.5em 0 0;
     }
 }

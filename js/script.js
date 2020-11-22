@@ -1,5 +1,6 @@
+AOS.init();
+
 var mySwiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
     spaceBetween: 50,
     direction: 'horizontal',
     loop: false,
@@ -7,10 +8,32 @@ var mySwiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-next',
       prevEl: '.swiper-prev',
     },
+    breakpoints: {
+      400: {
+        slidesPerView: 1.4,
+        spaceBetween: 30,
+      },
+      550: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      700: {
+        slidesPerView: 2.5,
+        spaceBetween: 50,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+      1100: {
+        slidesPerView: 3.5,
+        spaceBetween: 50,
+      },
+    }
 });
 
 var scroll = new SmoothScroll('a[href*="#"]',{
-  header: '.header'
+  header: 'header',
 });
 
 var menuItems = document.querySelectorAll('.menu-item');
