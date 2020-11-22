@@ -518,7 +518,7 @@ main #work .swiper-slide:nth-of-type(2) {
 }
 
 main #work .swiper-slide:nth-of-type(3) {
-    background: #000000;
+    background: #F9AF0E;
 }
 
 main #work .swiper-slide:nth-of-type(4) {
@@ -549,6 +549,7 @@ main #work .swiper-slide img {
     transform: translate(-50%,-100%); 
     -webkit-transform: translate(-50%,-100%); 
     max-width: 12em;
+    max-height: 5em;
 }
 
 main #work .swiper-slide div {
@@ -642,7 +643,7 @@ main#work-detail .info ul li {
 
 main#work-detail .info ul li a {
     font-size: 1em;
-    margin-left: 0.6em;
+    margin-left: 0.4em;
 }
 
 main#work-detail .info ul img {
