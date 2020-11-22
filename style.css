@@ -518,15 +518,15 @@ main #work .swiper-slide:nth-of-type(2) {
 }
 
 main #work .swiper-slide:nth-of-type(3) {
-    background: #F9AF0E;
+    background: #000000;
 }
 
 main #work .swiper-slide:nth-of-type(4) {
-    background: #C61B4E;
+    background: #F9AF0E;
 }
 
 main #work .swiper-slide:nth-of-type(5) {
-    background: #0950BA;
+    background: #C61B4E;
 }
 
 main #work .swiper-slide:nth-of-type(6) {
@@ -666,6 +666,7 @@ main#work-detail figcaption {
     font-weight: 500; 
     color: #aaaaaa;
     margin-top: 0.8em;
+    text-align: center;
 }
 
 main#work-detail .content > section {
