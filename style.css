@@ -518,19 +518,19 @@ main #work .swiper-slide:nth-of-type(2) {
 }
 
 main #work .swiper-slide:nth-of-type(3) {
-    background: #000000;
-}
-
-main #work .swiper-slide:nth-of-type(4) {
-    background: #F9AF0E;
-}
-
-main #work .swiper-slide:nth-of-type(5) {
     background: #C61B4E;
 }
 
+main #work .swiper-slide:nth-of-type(4) {
+    background: #000000;
+}
+
+main #work .swiper-slide:nth-of-type(5) {
+    background: #F9AF0E;
+}
+
 main #work .swiper-slide:nth-of-type(6) {
-    background: #2EA333;
+    background: #000000;
 }
 
 main #work .swiper-slide a {
@@ -686,9 +686,16 @@ main#work-detail .content p {
     font-weight: 400; 
 }
 
+main#work-detail .content p a {
+    color: #4200FF;
+    font-size: 1em;
+}
+
 main#work-detail .content a.fill {
     margin-top: 3em;
     display: inline-block;
+    color: white;
+    font-size: 0.8em;
 }
 
 main#work-detail .content h4:before {
