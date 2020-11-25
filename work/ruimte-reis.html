@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <title>Ruimte Reis - Ravi Stil</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="../img/favicon.png">
     <link rel="stylesheet" type="text/css" href="../style.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
     <main id="work-detail">
         <div>
             <section class="info">
-                <a href="../index.html#work"><img src="../img/arrow2.svg">Terug naar overzicht</a>
+                <h2 class="hidden">Informatie</h2>
+                <a href="../index.html#work"><img src="../img/arrow2.svg" alt="arrow">Terug naar overzicht</a>
                 <ul>
-                    <li><img src="../img/study.svg">Hogeschool van Amsterdam</li>
-                    <li><img src="../img/user.svg">Individueel</li>
-                    <li><img src="../img/date.svg">2020</li>
+                    <li><img src="../img/study.svg" alt="studie">Hogeschool van Amsterdam</li>
+                    <li><img src="../img/user.svg" alt="user">Individueel</li>
+                    <li><img src="../img/date.svg" alt="datum">2020</li>
                 </ul>
             </section>
             <section class="content">
-                <h1>Ruimte reis</h1>
-                <h4>Front-end Development</h4>
-                <figure>
-                    <img src="../img/work/ruimte1.jpg">
+                <h1 data-aos="fade-up" data-aos-delay="100">Ruimte reis</h1>
+                <h4 data-aos="fade-up" data-aos-delay="150">Front-end Development</h4>
+                <figure data-aos="fade-up" data-aos-delay="250">
+                    <img src="../img/work/ruimte1.jpg" alt="ruimte reis thumbnail">
                 </figure>
-                <section>
+                <section data-aos="fade-up">
                     <h2>Opdracht</h2>
                     <p>Voor het vak Inleiding Programmeren in het 1e jaar van mijn studie was het de bedoeling om een Tamagotchi te maken waarbij de gebruiker verschillende interactieve dingen kan doen.
                         Ik heb ervoor gekozen om het thema "Ruimte reis" te gebruiken voor de Tamagotchi. Het idee wat ik bedacht heb is dat de gebruiker op meerdere planeten kan landen en elementen kan toevoegen.
@@ -39,21 +39,22 @@
                     </p>
                 </section>
                 <section>
-                    <h2>Scenes</h2>
-                    <figure>
-                        <img src="../img/work/ruimte2.jpg">
+                    <h2 data-aos="fade-up">Scenes</h2>
+                    <figure data-aos="fade-up">
+                        <img src="../img/work/ruimte2.jpg" alt="ruimte foto">
                     </figure>
-                    <p>Voor deze Tamagotchi heb ik 2 scenes ontworpen waarin de gebruiker elementen aan en uit kan zetten. Per scene is het landschap van de planeet te zien waarmee te interacteren is.
+                    <p data-aos="fade-up">Voor deze Tamagotchi heb ik 2 scenes ontworpen waarin de gebruiker elementen aan en uit kan zetten. Per scene is het landschap van de planeet te zien waarmee te interacteren is.
                     </p>
                 </section>
                 <section>
-                    <h2>Live versie</h2>
-                    <p>Het uiteindelijke resultaat van deze opdracht is online te zien via de knop hieronder. Het is aan te raden om dit op desktop te kijken en niet op mobiel.
+                    <h2 data-aos="fade-up">Live versie</h2>
+                    <p data-aos="fade-up">Het uiteindelijke resultaat van deze opdracht is online te zien via de knop hieronder. Het is aan te raden om dit op desktop te kijken en niet op mobiel.
                     </p>
-                    <a class="fill" href="https://oege.ie.hva.nl/~stilr/inleidingprogrammeren/" target="_blank">Bekijk de live versie</a>
+                    <a class="fill" href="https://oege.ie.hva.nl/~stilr/inleidingprogrammeren/" target="_blank" data-aos="fade-up">Bekijk de live versie</a>
                 </section>
             </section>
         </div>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>

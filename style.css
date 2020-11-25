@@ -19,6 +19,16 @@
     outline-color: black;
   }
 
+  .hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
 /******************* Typography ****************/
 
 h1 {
@@ -264,7 +274,7 @@ button.menu-trigger-open {
     cursor: pointer;
 }
 
-button.menu-trigger-open svg {
+button.menu-trigger-open img {
     width: 2.5em;
     height: 2.5em;
     padding-right: 2px;
@@ -291,10 +301,10 @@ header .mobile.active {
     transform: translateX(0);
 }
 
-header .mobile nav > a svg {
+header .mobile nav > a img {
     display: block;
     margin: auto;
-    max-width: 10em;   
+    width: 10em;   
     margin-bottom: 4em;
 }
 
@@ -330,7 +340,7 @@ header .mobile .menu-trigger-close {
     cursor: pointer;
 }
 
-header .mobile .menu-trigger-close svg {
+header .mobile .menu-trigger-close img {
     width: 2.5em;
     height: 2.5em;
 }
@@ -341,6 +351,8 @@ header .mobile .menu-trigger-close svg {
 /* Hero Section */
 main #hero {
     max-width: 1150px;
+    min-height: 700px;
+    max-height: 1400px;
     padding: 2.5em 1.5em 1.5em;
     margin: auto;
     height: 95vh;
@@ -450,6 +462,10 @@ main #usp section {
     display: grid;
     grid-column-gap: 5em;
     grid-template-columns: repeat(3, 1fr);
+}
+
+main #usp section article img {
+    width: 2.5em;
 }
 
 main #usp section article h3 {
@@ -750,11 +766,15 @@ footer .contact svg:hover {
     transition: 0.4s ease;
 }
 
-footer .contact svg #logo .cls-1 {
+footer .contact svg #logo1 .cls-1,
+footer .contact svg #logo2 .cls-1,
+footer .contact svg #logo3 .cls-1 {
     transition: 0.4s ease;
 }
 
-footer .contact svg:hover #logo .cls-1 {
+footer .contact svg:hover #logo1 .cls-1,
+footer .contact svg:hover #logo2 .cls-1,
+footer .contact svg:hover #logo3 .cls-1 {
     fill: black;
 }
 
@@ -807,7 +827,7 @@ footer .logo {
     justify-content: flex-end;
 }
 
-footer .logo svg {
+footer .logo img {
     opacity: 0.25;
 }
 
@@ -829,6 +849,7 @@ footer .logo svg {
     /* Mobile main homepage */
     main #hero {
         height: auto;
+        min-height: 500px;
         padding: 10em 1.5em 7.5em;
         justify-content: center;
     }
